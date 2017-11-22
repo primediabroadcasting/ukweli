@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ukweli: Dropping the truth bombs in dark social</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  </head>
+  <body>
+<nav  class="navbar is-fixed-top is-danger">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="http://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1511332485/ukweli_xnl3aw.png" alt="Ukweli: Dropping the truth bombs in dark social" width="112" height="28">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+      <a class="navbar-item" href="/about">
+        How does it work?
+      </a>
+      <a class="navbar-item" href="/usage/">
+        API
+      </a>
+    </div>
+
+<!--     <div class="navbar-end">
+      <a class="navbar-item" href="/admin/">
+        Admin
+      </a>
+    </div> -->
+  </div>
+</nav>
+
+  <section class="section">
+    <div class="container">
+      {% block body %}{% endblock %}
+    </div>
+  </section>
+  </body>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});    
+  </script>
+</html>

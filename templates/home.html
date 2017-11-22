@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="columns">
+      <div class="column">
+
+<div class="card">
+  <div class="card-content">
+    <div class="content">
+<p>Dark social is the black box of sharing.</p>
+
+<p>On messaging platforms, we can’t track what’s being shared, who’s sharing it, where it comes from or if it’s true. </p>
+
+<p>How do we interrupt patterns we can’t track? How do we call bullshit on what we can’t see? </p>
+
+<p>Enter Ukweli. </p>
+
+<p>A messaging-focused machine learning AI, to detect fake news in dark social. </p>
+
+<p>Ukweli stops you from being a part of the propaganda problem - by warning you that a message you’re about to forward is misleading, false or yet to be verified.</p>
+
+<p>Be a part of the solution and use your mobile to fight back in the war on truth - by warning your mates that their shares are fakes.</p>
+    </div>
+  </div>
+</div>
+
+
+     </div>
+      <div class="column">
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Give Ukweli a try!
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      Simply paste in a message you've received and we'll try and tell you about it:
+    <form action="check" method="POST">
+
+      <div class="field">
+        <div class="control">
+          <textarea class="textarea" placeholder="Message" name="message"></textarea>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-text">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

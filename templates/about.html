@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="columns">
+      <div class="column">
+
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      So how does this work?
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+    <p>Traditional approaches for detecting fake news articles use a collection of indicators - everything from the host name that the article is published on, the words and language that is used in the article, through to under the hood things like looking for ad trackers and known Google Analytics accounts of purveyors of fake news.</p>
+    <p>Once the text becomes a message in a chat application, we lose all of those indicators and are left with just the language of the message.  In order to compensate for this, we are looking at each message in 3 ways:</p>
+    <ol>
+      <li>We compare the message to a database that we have of known hoax messages</li>
+      <li>We compare the language of the message to  that of known fake news articles</li>
+      <li>We compare the language of the message to that of known SMS spam</li>
+    </ol>
+    <p>Hopefully this will provide enough indicators to make an educated guess as to whether you should be forwarding that message or not!</p>
+    </div>
+  </div>
+</div>
+
+
+     </div>
+      <div class="column">
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Under the hood
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <p>We collected a database of known hoax and fake WhatsApp messages as our corpus of known fakes.  Any message you send us is compared against the set of known fake messages and we send back a confidence indicator (ranging from 0 too 100) on how your message compares to the closest fake we have.  If we have the exact message, you'll get a number very close to 100.<p>
+      <p>For the fake news we used a dataset of 13 000 news articles - 6500 fake news and 6500 real.  A machine learning model was trained to learn how fake news articles are composed -  what words they use, how they use punctuation and which language constructs are most prevalent.  The message you send us is then compared against that model for the same things and you get back a confidence indicator (from 0 to 100) on how closely it matches fake news articles.<p>
+      <p>For the SMS Spam we used a dataset of 5500 SMS', labelled as spam or not.  Similarly, a machine learning model was trained on this to learn how spam SMS' are composed, and messages you send us are compared to this model, giving a confidence indicator on how closely your message fits with the indicators of a spam SMS message.</p>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

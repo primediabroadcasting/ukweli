@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+<article class="message is-link">
+  <div class="message-header">
+    <p>Results for:</p>
+  </div>
+  <div class="message-body">
+    {{ message }}
+  </div>
+</article>
+
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Known Fakes
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          When comparing your message against known fake messages, we found that it has a {{ data.known }}% match.
+          <p><progress class="progress is-info" value="{{ data.known }}" max="100">45%</progress></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Fake News
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          When comparing your message against fake news articles, we found that it has a {{ data.fakenews }}% match.
+          <p><progress class="progress is-info" value="{{ data.fakenews }}" max="100">{{ data.fakenews }}%</progress></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          SMS Spam
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          When comparing your message against SMS spam messages, we found that it has a {{ data.smsspam }}% match.
+          <p><progress class="progress is-info" value="{{ data.smsspam }}" max="100">{{ data.smsspam }}%</progress></p>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+{% endblock %}

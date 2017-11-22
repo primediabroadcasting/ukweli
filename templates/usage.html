@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Using the API
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <p>The API powering this is at http://ukweli.ngrok.io/api/</p>
+      <p>It accepts <code>POST</code> requests and expects a JSON payload with a single key called <code>message</code> that contains the message you want to test.</p>
+      <p>
+        <pre>
+{
+  "message": "please call us now to collect your prize!!"
+}
+        </pre>
+      </p>
+      <p>In response you will get a JSON payload containing 3 keys:
+        <ul>
+          <li><strong>known</strong> is the indicator on how closely your message matches our database of known fake messages</li>
+          <li><strong>fakenews</strong> is how closely your message matches the indicators of fake news</li>
+          <li><strong>smsspam</strong> is how closely your message matches the indicators of SMS spam</li>
+        </ul>
+      <p>
+      <p>
+        <pre>
+{
+    "fakenews": 14.000000000000002,
+    "known": 19,
+    "smsspam": 73
+}          
+        </pre>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Sample Code
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <p><strong>Using curl</strong></p>
+      <p>
+        <pre>
+~ curl -H "Content-Type: application/json" 
+  -X POST 
+  -d '{"message":"Kindly note that the lifespan of a green barcoded  ID comes to an end 31/03/2018\n
+  Please apply for your smart card ID\nLets share the information"}' http://ukweli.ngrok.io/api/
+{
+  "fakenews": 7.000000000000001,
+  "known": 93.0,
+  "smsspam": 21.0
+}
+        </pre>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
